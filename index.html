@@ -25,6 +25,9 @@ h1 {
 
 .buttons {
     display: flex;
+    flex-direction: row;   /* явно говорим: в строку */
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
@@ -40,6 +43,7 @@ button {
 #yes {
     background-color: #ff1e56;
     color: white;
+    transition: transform 0.3s ease;
 }
 
 #no {
