@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Валентинка 💖</title>
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+#yes {
+    background-color: #ff1e56;
+    color: white;
+}
+
+#no {
+    background-color: #333;
+    color: white;
+    position: absolute;
+}
+</style>
+</head>
+<body>
+
+<h1>Будешь ли ты моей валентинкой? 💘</h1>
+
+<button id="yes" onclick="yesClick()">Да 💕</button>
+<button id="no">Нет 🙈</button>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+
+function moveButton() {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    // Кнопка "Да" становится больше
+    let currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
+    yesBtn.style.fontSize = (currentSize + 5) + "px";
+}
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("touchstart", moveButton);
+
+function yesClick() {
+    document.body.innerHTML = "<h1 style='color:white;'>Урааааа 😍💖</h1>";
+}
+</script>
+
+</body>
+</html>
